@@ -6,61 +6,58 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StatisticsTest {
     @Test
-    void ShouldSumCalculate() {
+    void ShouldSum() { //(1)
         Statistics service = new Statistics();
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 180;
-        long actual = service.ShouldSumCalculate(initialValue);
+        long actual = service.ShouldSum(salesValue);
         assertEquals(expected, actual);
 
     }
 
     @Test
-    void MiddleValueCalculate() {
+    void MiddleValue() { //(2)
         Statistics service = new Statistics();
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 15;
-        long actual = service.MiddleValueCalculate(initialValue);
+        long actual = service.MiddleValue(salesValue);
         assertEquals(expected, actual);
 
     }
 
     @Test
-    void minSalesCalculate() {
+    void maxSales() { //(3)
         Statistics service = new Statistics();
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 9;
-        long actual = service.minSalesCalculate(initialValue);
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void maxSalesCalculate() {
-        Statistics service = new Statistics();
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 8;
-        long actual = service.maxSalesCalculate(initialValue);
+        long actual = service.maxSales(salesValue);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minSales() { //(4)
+        Statistics service = new Statistics();
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 9;
+        long actual = service.minSales(salesValue);
         assertEquals(actual, expected);
     }
 
     @Test
-    void middleValueMinSalesCalculate() {
+    void middleValueMinSales() { //(5)
         Statistics service = new Statistics();
-        long summMethod = MiddleValueCalculate;
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 5;
-        long actual = service.middleValueMinSalesCalculate(initialValue);
+        long actual = service.middleValueMinSales(salesValue);
         assertEquals(expected, actual);
     }
 
     @Test
-    void middleValueMaxSalesCalculate() {
+    void middleValueMaxSales() { //(6)
         Statistics service = new Statistics();
-        long[] initialValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 5;
-        long actual = service.middleValueMaxSalesCalculate(initialValue);
+        long actual = service.middleValueMaxSales(salesValue);
         assertEquals(expected, actual);
     }
-
-
 }
