@@ -1,29 +1,31 @@
 package ru.netology.stats;
 
 public class Statistics {
-    public long ShouldSumCalculate(long[] initialValue) {
+    private Object MiddleValueCalculate;
+
+    public long ShouldSumCalculate(long[] salesValue) { //(1)
         long newValue = 0;
-        for (long startValue : initialValue) {
+        for (long startValue : salesValue) {
             newValue += startValue;
         }
         return newValue;
     }
 
-    public long MiddleValueCalculate(long[] initialValue) {
+    public long MiddleValueCalculate(long[] salesValue) { //(2)
         long averageValue = 0;
-        for (long newAverageValue : initialValue) {
+        for (long newAverageValue : salesValue) {
             averageValue += newAverageValue;
         }
-        long month = initialValue.length;
+        long month = salesValue.length;
         long monthAverageValue = averageValue / month;
         return monthAverageValue;
     }
 
-    public long maxSalesCalculate(long[] initialValue) {
+    public long maxSalesCalculate(long[] salesValue) { //(3)
         long maxMonth = 0;
         long month = 0;
-        for (long sales : initialValue) {
-            if (sales >= initialValue[(int) maxMonth]) {
+        for (long sales : salesValue) {
+            if (sales >= maxMonth) {
                 maxMonth = month;
             }
             month = month + 1;
@@ -31,11 +33,11 @@ public class Statistics {
         return maxMonth + 1;
     }
 
-    public long minSalesCalculate(long[] initialValue) {
+    public long minSalesCalculate(long[] salesValue) { //(4)
         long minMonth = 0;
         long month = 0;
-        for (long sale : initialValue) {
-            if (sale <= initialValue[(int) minMonth]) {
+        for (long sale : salesValue) {
+            if (sale <= minMonth) {
                 minMonth = month;
             }
             month = month + 1;
@@ -43,24 +45,25 @@ public class Statistics {
         return minMonth + 1;
     }
 
-    public long middleValueMinSalesCalculate(long[] initialValue) {
-        long averageValue = 0;
-        long middleMonth = 0;
-        for (long newAverageValue : initialValue) {
-            averageValue += newAverageValue;
-        }
-        long month = initialValue.length;
-        long monthAverageValue = averageValue / month;
-        for (long costMonth : initialValue) {
-            if (costMonth < monthAverageValue) {
-                middleMonth = middleMonth + 1;
-            }
-            middleMonth = middleMonth;
-        }
-        return middleMonth;
+    public long middleValueMinSalesCalculate(long[] salesValue) { //(5)
+//        long averageValue = 0;
+//        long middleMonth = 0;
+////        for (long newAverageValue : initialValue) {
+////            averageValue += newAverageValue;
+////        }
+//        long month = salesValue.length;
+//        long monthAverageValue = averageValue / month;
+//        long summMethod = MiddleValueCalculate;
+//        for (summMethod :salesValue) {
+//            if (summMethod < monthAverageValue) {
+//                middleMonth = middleMonth + 1;
+//            }
+//            middleMonth = middleMonth;
+//        }
+//        return middleMonth;
     }
 
-    public long middleValueMaxSalesCalculate(long[] initialValue) {
+    public long middleValueMaxSalesCalculate(long[] initialValue) { //(6)
         long averageValue = 0;
         long middleMonth = 0;
         for (long newAverageValue : initialValue) {
@@ -75,5 +78,8 @@ public class Statistics {
             middleMonth = middleMonth;
         }
         return middleMonth;
+    }
+
+    private class MiddleValueCalculate {
     }
 }
