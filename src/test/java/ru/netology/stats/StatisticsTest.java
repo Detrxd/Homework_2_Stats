@@ -6,21 +6,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StatisticsTest {
     @Test
-    void ShouldSum() { //(1)
+    void shouldSum() { //(1)
         Statistics service = new Statistics();
         long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 180;
-        long actual = service.ShouldSum(salesValue);
+        long actual = service.shouldSum(salesValue);
         assertEquals(expected, actual);
 
     }
 
     @Test
-    void MiddleValue() { //(2)
+    void middleValue() { //(2)
         Statistics service = new Statistics();
         long[] salesValue = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 15;
-        long actual = service.MiddleValue(salesValue);
+        long actual = service.middleValue(salesValue);
         assertEquals(expected, actual);
 
     }
